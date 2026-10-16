@@ -1,0 +1,750 @@
+
+/* ==========================================
+   BOOKLEAF-INSPIRED SUPPORT PORTAL
+   Warm editorial theme, charcoal and ivory
+   ========================================== */
+
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #292622;
+  background: #f8f5f0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --bl-primary: #292622;
+  --bl-primary-hover: #45403a;
+  --bl-bg: #f8f5f0;
+  --bl-white: #ffffff;
+  --bl-beige: #e7d9c6;
+  --bl-border: #e5ddd2;
+  --bl-muted: #786f65;
+  --bl-accent: #8c6a45;
+  --bl-green: #24633e;
+  --bl-green-bg: #e6f4e9;
+  --bl-amber: #8b5714;
+  --bl-amber-bg: #fff1d9;
+  --bl-red: #a32f2a;
+  --bl-red-bg: #fdebea;
+  --bl-radius: 14px;
+  --bl-shadow: 0 5px 20px rgba(41, 38, 34, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--bl-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bl-bg);
+  color: var(--bl-primary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--bl-primary);
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 750;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+a {
+  color: var(--bl-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--bl-primary);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #c4a783;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   LOGIN PAGE
+   ========================================== */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(
+      ellipse at top left,
+      rgba(231, 217, 198, 0.55),
+      transparent 45%
+    ),
+    var(--bl-bg);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 42px;
+  background: var(--bl-white);
+  border: 1px solid var(--bl-border);
+  border-radius: 20px;
+  box-shadow: 0 16px 50px rgba(41, 38, 34, 0.09);
+}
+
+.login-card .brand-mark {
+  margin: 0 auto 22px;
+}
+
+.login-card .eyebrow {
+  text-align: center;
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+}
+
+.login-card .subtitle {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-card label {
+  margin-top: 7px;
+  color: var(--bl-primary);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.login-card input {
+  margin-bottom: 8px;
+}
+
+.login-card button[type="submit"] {
+  width: 100%;
+  margin-top: 12px;
+  padding: 13px 18px;
+}
+
+.footer-note {
+  margin: 24px 0 0;
+  text-align: center;
+  color: var(--bl-muted);
+  font-size: 12px;
+}
+
+/* ==========================================
+   BRANDING
+   ========================================== */
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--bl-primary);
+  color: #fffaf3;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.brand-lockup strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.brand-lockup p,
+.user-area p {
+  margin: 3px 0 0;
+  color: var(--bl-muted);
+  font-size: 12px;
+}
+
+/* ==========================================
+   DASHBOARD HEADER
+   ========================================== */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: var(--bl-bg);
+}
+
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px clamp(20px, 5vw, 72px);
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--bl-border);
+  box-shadow: 0 2px 8px rgba(41, 38, 34, 0.025);
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.user-area > div {
+  text-align: right;
+}
+
+.user-area strong {
+  font-size: 13px;
+}
+
+/* ==========================================
+   DASHBOARD CONTENT
+   ========================================== */
+
+.dashboard-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 38px clamp(20px, 5vw, 72px) 60px;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: var(--bl-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.dashboard-content > h1 {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: var(--bl-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   STATISTICS
+   ========================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.stat-card {
+  min-width: 0;
+  padding: 23px;
+  background: var(--bl-white);
+  border: 1px solid var(--bl-border);
+  border-radius: var(--bl-radius);
+  box-shadow: var(--bl-shadow);
+}
+
+.stat-card span {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--bl-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stat-card strong {
+  display: block;
+  color: var(--bl-primary);
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  font-weight: 750;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   PANELS AND CARDS
+   ========================================== */
+
+.panel {
+  margin-top: 24px;
+  padding: 25px;
+  background: var(--bl-white);
+  border: 1px solid var(--bl-border);
+  border-radius: var(--bl-radius);
+  box-shadow: var(--bl-shadow);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--bl-border);
+}
+
+.panel-heading h2 {
+  margin: 0;
+}
+
+.panel-heading > span {
+  padding: 5px 10px;
+  background: var(--bl-bg);
+  border-radius: 999px;
+  color: var(--bl-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.panel > p {
+  color: var(--bl-muted);
+}
+
+/* ==========================================
+   TABLES
+   ========================================== */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--bl-border);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bl-white);
+  text-align: left;
+}
+
+thead {
+  background: #f3ede5;
+}
+
+th {
+  color: #5e5449;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 15px 16px;
+  border-bottom: 1px solid var(--bl-border);
+  vertical-align: middle;
+}
+
+td {
+  color: #4b453e;
+  font-size: 13px;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: #fcfaf7;
+}
+
+/* ==========================================
+   STATUS PILLS
+   ========================================== */
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 5px 10px;
+  border: 1px solid var(--bl-border);
+  border-radius: 999px;
+  background: #f3eee7;
+  color: #62574b;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+/* Add these classes where your JSX supports
+   separate status and priority classes. */
+
+.status-open {
+  background: #eaf2fc;
+  color: #245b9c;
+  border-color: #d6e4f8;
+}
+
+.status-pending,
+.status-in-progress {
+  background: var(--bl-amber-bg);
+  color: var(--bl-amber);
+  border-color: #f0dfbd;
+}
+
+.status-resolved,
+.status-closed {
+  background: var(--bl-green-bg);
+  color: var(--bl-green);
+  border-color: #d2e9d7;
+}
+
+.priority-critical,
+.priority-high {
+  background: var(--bl-red-bg);
+  color: var(--bl-red);
+  border-color: #f2d3d0;
+}
+
+.priority-medium {
+  background: var(--bl-amber-bg);
+  color: var(--bl-amber);
+}
+
+.priority-low {
+  background: var(--bl-green-bg);
+  color: var(--bl-green);
+}
+
+/* ==========================================
+   FORMS AND INPUTS
+   ========================================== */
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 13px;
+  color: var(--bl-primary);
+  background: var(--bl-white);
+  border: 1px solid var(--bl-border);
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 150ms ease,
+              box-shadow 150ms ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a1988e;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--bl-accent);
+  box-shadow: 0 0 0 3px rgba(140, 106, 69, 0.12);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+label {
+  color: var(--bl-primary);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+button {
+  border-radius: 9px;
+  font-weight: 650;
+  transition: background-color 150ms ease,
+              border-color 150ms ease,
+              color 150ms ease,
+              transform 150ms ease;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.login-card button[type="submit"],
+button.primary-button,
+button.btn-primary {
+  padding: 11px 17px;
+  color: #ffffff;
+  background: var(--bl-primary);
+  border: 1px solid var(--bl-primary);
+}
+
+.login-card button[type="submit"]:hover:not(:disabled),
+button.primary-button:hover:not(:disabled),
+button.btn-primary:hover:not(:disabled) {
+  background: var(--bl-primary-hover);
+  border-color: var(--bl-primary-hover);
+}
+
+.secondary-button {
+  padding: 9px 14px;
+  color: var(--bl-primary);
+  background: #ffffff;
+  border: 1px solid var(--bl-border);
+  white-space: nowrap;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: var(--bl-bg);
+  border-color: #cdbca8;
+}
+
+/* ==========================================
+   ERROR AND HELPER MESSAGES
+   ========================================== */
+
+.error-message {
+  padding: 11px 14px;
+  color: var(--bl-red);
+  background: var(--bl-red-bg);
+  border: 1px solid #f2d3d0;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.success-message {
+  padding: 11px 14px;
+  color: var(--bl-green);
+  background: var(--bl-green-bg);
+  border: 1px solid #d2e9d7;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+/* ==========================================
+   AI DRAFTS AND INTERNAL NOTES
+   These styles do not grant permissions.
+   Keep internal notes admin-only in the app.
+   ========================================== */
+
+.ai-draft,
+.ai-draft-panel {
+  padding: 18px;
+  background: #f5f0e8;
+  border: 1px solid #e7d9c6;
+  border-radius: 12px;
+}
+
+.internal-note,
+.internal-notes-panel {
+  padding: 15px;
+  background: #fff3d9;
+  border: 1px solid #ead2a2;
+  border-radius: 10px;
+}
+
+.public-reply,
+.message-public {
+  padding: 15px;
+  background: #f8f5f0;
+  border: 1px solid var(--bl-border);
+  border-radius: 10px;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+@media (max-width: 1000px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-content {
+    padding-top: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-header {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 18px 20px;
+  }
+
+  .user-area {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .user-area > div {
+    text-align: left;
+  }
+
+  .dashboard-content {
+    padding: 25px 15px 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card strong {
+    font-size: 1.45rem;
+  }
+
+  .panel {
+    padding: 16px;
+    margin-top: 18px;
+  }
+
+  .panel-heading {
+    align-items: flex-start;
+  }
+
+  .panel-heading h2 {
+    font-size: 1.15rem;
+  }
+
+  .login-card {
+    padding: 27px 21px;
+  }
+
+  th,
+  td {
+    padding: 11px 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.priority-critical {
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 700;
+  border: 1px solid #fca5a5;
+}
+
+.priority-high {
+  background: #ffedd5;
+  color: #9a3412;
+  font-weight: 700;
+  border: 1px solid #fdba74;
+}
+
+/* Date filters and other filter controls */
+.ticket-filters input[type="date"] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Allow the filter grid to accommodate five controls. */
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.filter-grid > div {
+  min-width: 0;
+}
+
+.filter-grid label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.filter-grid select,
+.filter-grid input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
