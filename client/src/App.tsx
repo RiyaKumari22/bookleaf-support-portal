@@ -1033,22 +1033,36 @@ function App() {
                     </thead>
 
                     <tbody>
-                      {books.map((book) => (
-                        <tr key={book.id}>
-                          <td>{book.title}</td>
-                          <td>{book.isbn || "Not provided"}</td>
-                          <td>{book.genre || "—"}</td>
-                          <td>
-                            <span className="status-pill">
-                              {formatStatus(book.status)}
-                            </span>
-                          </td>
-                          <td>{formatCurrency(book.totalRoyaltyEarned)}</td>
-                          <td>{formatCurrency(book.royaltyPaid)}</td>
-                          <td>{formatCurrency(book.royaltyPending)}</td>
-                        </tr>
-                      ))}
-                    </tbody>
+  {books.map((book) => (
+    <tr key={book.id}>
+      <td>{book.title}</td>
+      <td>{book.isbn || "Not provided"}</td>
+      <td>{book.genre || "—"}</td>
+      <td>
+        <span className="status-pill">
+          {formatStatus(book.status)}
+        </span>
+      </td>
+      <td>{formatCurrency(book.totalRoyaltyEarned)}</td>
+      <td>{formatCurrency(book.royaltyPaid)}</td>
+      <td>{formatCurrency(book.royaltyPending)}</td>
+      <td>
+        <button
+          type="button"
+          onClick={() =>
+            alert(
+              `Book: ${book.title}\nISBN: ${book.isbn || "Not provided"}\nGenre: ${book.genre || "—"}\nStatus: ${formatStatus(book.status)}`
+            )
+          }
+        >
+          View Details
+        </button>
+      </td>
+    </tr>
+    
+  ))}
+  <th>Actions</th>
+</tbody>
                   </table>
                 </div>
               )}
