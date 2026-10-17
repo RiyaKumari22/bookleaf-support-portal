@@ -4,7 +4,9 @@ import type { FormEvent } from "react";
 import "./App.css";
 import "./bookleaf-theme.css";
 
-const API = "http://localhost:5000/api";
+
+const API = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/+$/, "") + "/api";
+
 
 type User = {
   id: number;
