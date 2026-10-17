@@ -13,7 +13,7 @@ const PORT = Number(process.env.PORT) || 5000;
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: process.env.CLIENT_URL || "https://bookleaf-support-portal-1gw5.onrender.com",
   })
 );
 
